@@ -1,0 +1,2 @@
+class FavoriteHerosController < ApplicationController
+end

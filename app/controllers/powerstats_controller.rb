@@ -1,0 +1,2 @@
+class PowerstatsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class AppearancesController < ApplicationController
+end
