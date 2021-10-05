@@ -7,6 +7,8 @@ class CreateAppearances < ActiveRecord::Migration[6.1]
       t.string :weight
       t.string :eye_color
       t.string :hair_color
+      t.string :img_url
+      t.string :ani
       t.belongs_to :superhero, null: false, foreign_key: true
 
       t.timestamps
