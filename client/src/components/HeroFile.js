@@ -7,7 +7,9 @@ const HeroFile = () => {
 
     return(
         <div>
-            <HeroRender />
+            <Switch>
+                <Route path="/Heroes" component={() => <HeroRender />} />
+            </Switch>
         </div>
     )
 }

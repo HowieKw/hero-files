@@ -35,7 +35,7 @@ const HeroCard = ({ hero, image }) => {
                             Creator: {creator} - Universe: {universe}
                         </h4>
                         <hr></hr>
-                        <button>💖 Likes: {like_count}</button>
+                        <button className="like-button">💖 Likes: {like_count}</button>
                     </div>
                 </div>
         </div>

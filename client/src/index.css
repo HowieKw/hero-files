@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+
+/* HERO CARDS */
 .heroes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -45,65 +47,9 @@ code {
   width: 50%;
 }
 
-/* .heroes {
+.like-button {
   display: flex;
-  flex-flow: column;
-  align-items:center;
-  max-width: 1120px;
-  width: 90%;
-  margin: 0 auto;
-} */
-
-/* .heroes-card {
-  padding: 6rem;
-  background: transparent;
-} */
-
-/* .hero-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 67%;
-  overflow: hidden;
+  justify-content: left;
+  margin-left: 1rem;
+  margin-bottom: .5rem;
 }
-
-.hero-info {
-  padding: 20px 30px 30px;
-  background: #fff;
-}
-
-.hero-description {
-  color: #252e48;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.profilePic {
-  position:center;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  width: 50%;
-  height: 50%;
-  max-height: 100%;
-  object-fit: cover;
-  transition: all 0.2s linear;
-} */  
-
-/* .card {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  position: relative;
-  border: 2px solid cornflowerblue;
-} */
-
-/* /* box-sizing: border-box;
-  margin: 0 auto;
-  list-style: none;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  display: flex;
-  padding: 5px; */
