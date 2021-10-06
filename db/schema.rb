@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_064628) do
 
   create_table "appearances", force: :cascade do |t|
     t.string "gender"
-    t.string "origin"
+    t.string "species"
     t.string "height"
     t.string "weight"
     t.string "eye_color"

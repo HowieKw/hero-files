@@ -42,9 +42,9 @@ app1 = Appearance.create(gender: "Female", species: "Human, genetically altered"
 app2 = Appearance.create(gender: "Male", species: "Human", height: "188 cm • 6\'2\"", weight: "81.6 kg • 179.9 lbs", eye_color: "Grey", hair_color: "Black w/white streaks", img_url: "https://static.wikia.nocookie.net/marveldatabase/images/1/10/Marvel_Tales_Doctor_Strange_Vol_1_1_Virgin_Variant.jpg/revision/latest/scale-to-width-down/1000?cb=20191110040407", ani: "./images/Doctor-Strange.gif", superhero_id: doctor_strange.id)
 app3 = Appearance.create(gender: "Male", species: "Dhampir", height: "188 cm • 6\'2\"", weight: "97.5 kg • 214.95 lbs", eye_color: "Brown", hair_color: "Black", img_url: "https://static.wikia.nocookie.net/marveldatabase/images/e/e4/Avengers_Vol_8_42_Black_History_Month_Variant_Textless.jpg/revision/latest/scale-to-width-down/1000?cb=20210127113741", ani: "", superhero_id: blade.id)
 app4 = Appearance.create(gender: "Female", species: "Tamaranean", height: "185.4 cm • 6\'1\"", weight: "95 kg • 209.44 lbs", eye_color: "Green", hair_color: "Red", img_url: "https://static.wikia.nocookie.net/marvel_dc/images/2/28/Teen_Titans_Vol_6_16_Textless.jpg/revision/latest/scale-to-width-down/1000?cb=20180124210548", ani: "", superhero_id: starfire.id)
-app5 = Appearance.create(gender: "Female", species: "Half Human/Demon", height: "180.3 cm • 5\'11\"", weight: "63 kg • 138.89 lbs", eye_color: "Indigo", hair_color: "Black", img_url: "https://static.wikia.nocookie.net/marvel_dc/images/9/9a/Raven_Daughter_of_Darkness_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/1000?cb=20180124221528", ani: , superhero_id: raven.id)
+app5 = Appearance.create(gender: "Female", species: "Half Human/Demon", height: "180.3 cm • 5\'11\"", weight: "63 kg • 138.89 lbs", eye_color: "Indigo", hair_color: "Black", img_url: "https://static.wikia.nocookie.net/marvel_dc/images/9/9a/Raven_Daughter_of_Darkness_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/1000?cb=20180124221528", ani: "", superhero_id: raven.id)
 app6 = Appearance.create(gender: "Male", species: "Vitrumite", height: "188 cm • 6\'2\"", weight: "113.4 kg • 250 lbs", eye_color: "Brown", hair_color: "Black", img_url: "https://static.wikia.nocookie.net/imagecomics/images/e/e3/Invincible_Vol_1_7_001.jpg/revision/latest/scale-to-width-down/1000?cb=20150405172324", ani: "", superhero_id: omniman.id)
-app7 = Appearance.create(gender: "Female", species: , height: "172.7 cm • 5\'8\"", weight: "57 kg • 125 lbs", eye_color: "Green", hair_color: "Orange", img_url: "https://static.wikia.nocookie.net/imagecomics/images/4/42/Invincible_%282005%29_023_page_23.jpg/revision/latest/scale-to-width-down/1000?cb=20070201200103", ani: "", superhero_id: atom_eve.id)
+app7 = Appearance.create(gender: "Female", species: "Human", height: "172.7 cm • 5\'8\"", weight: "57 kg • 125 lbs", eye_color: "Green", hair_color: "Orange", img_url: "https://static.wikia.nocookie.net/imagecomics/images/4/42/Invincible_%282005%29_023_page_23.jpg/revision/latest/scale-to-width-down/1000?cb=20070201200103", ani: "", superhero_id: atom_eve.id)
 app8 = Appearance.create(gender: "Male", species: "Human", height: "220 cm • 7\'3\"", weight: "255 kg • 562 lbs", eye_color: "Blue", hair_color: "Blond", img_url: "https://i.pinimg.com/originals/11/8d/42/118d427d9662d6b390f115098c290253.jpg", ani: "", superhero_id: all_might.id)
 
 # -------- BACKGROUND ---------
@@ -85,7 +85,7 @@ back3 = Background.create(
     relatives: "Tara Cross (mother, deceased), 
     Lucas Cross (father), 
     Jamal Afari (foster father)",
-    history:
+    history: "The man known only as Blade came into the world an orphan. Bitten while in labor by the vampire Deacon Frost, his mother, a prostitute named Tara Brooks, died during childbirth. Blade was taken in and raised by his mother's friends. Determined to avenge her death, he fashioned himself into a vampire hunter even before he reached adulthood."
 )
 back4 = Background.create(
     superhero_id: starfire.id,

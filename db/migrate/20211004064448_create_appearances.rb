@@ -2,7 +2,7 @@ class CreateAppearances < ActiveRecord::Migration[6.1]
   def change
     create_table :appearances do |t|
       t.string :gender
-      t.string :origin
+      t.string :species
       t.string :height
       t.string :weight
       t.string :eye_color

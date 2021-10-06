@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :appearances
   resources :powerstats
   resources :favorite_heros
-  resources :likes
+  resources :likes, only: [:create]
   resources :comments
   resources :superheros
   resources :users
