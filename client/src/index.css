@@ -12,26 +12,54 @@ code {
     monospace;
 }
 
-/* .profilePic {
-  height: 50%;
-  width: auto;
+.heroes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
-.heroes {
+.heroes-card {
+  width: 500px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  transition: 0.3s;
+  animation: ease-in;
+}
+
+.heroes-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px 0px;
+}
+
+.hero-wrapper {
+  overflow: hidden;
+}
+
+
+.profilePic {
+  height: 50%;
+  width: 50%;
+}
+
+/* .heroes {
   display: flex;
   flex-flow: column;
   align-items:center;
   max-width: 1120px;
   width: 90%;
   margin: 0 auto;
-}
+} */
 
-.heroes-card {
+/* .heroes-card {
   padding: 6rem;
   background: transparent;
-}
+} */
 
-.hero-wrapper {
+/* .hero-wrapper {
   position: relative;
   width: 100%;
   padding-top: 67%;
@@ -61,7 +89,7 @@ code {
   max-height: 100%;
   object-fit: cover;
   transition: all 0.2s linear;
-} */
+} */  
 
 /* .card {
   display: grid;
@@ -70,7 +98,7 @@ code {
   border: 2px solid cornflowerblue;
 } */
 
-/* box-sizing: border-box;
+/* /* box-sizing: border-box;
   margin: 0 auto;
   list-style: none;
   width: 100%;

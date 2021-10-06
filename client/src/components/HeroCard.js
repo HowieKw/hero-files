@@ -1,13 +1,13 @@
 
 const HeroCard = ({ hero, image }) => {
-    const { alias, name, creator, universe } = hero
+    const { alias, name, creator, universe, like_count } = hero
     const { img_url } = image
 
     // console.log(img_url)
 
     return(
         <div className="heroes-card">
-            
+
             <div className="hero-info">
                     <div className="hero-description">
                         <h2>
@@ -34,6 +34,8 @@ const HeroCard = ({ hero, image }) => {
                         <h4>
                             Creator: {creator} - Universe: {universe}
                         </h4>
+                        <hr></hr>
+                        <button>💖 Likes: {like_count}</button>
                     </div>
                 </div>
         </div>
