@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
 const HeroCard = ({ hero, image }) => {
-    const { alias, name, creator, universe, like_count } = hero
+    const { alias, name, creator, universe, like_count, id } = hero
     const { img_url } = image
 
-    // console.log(img_url)
+    let path = `/Heroes/${id}`
 
     return(
         <div className="heroes-card">
@@ -19,18 +20,12 @@ const HeroCard = ({ hero, image }) => {
                     </div>
             </div>
 
-                <figure className="hero-wrapper">
+                <Link className="hero-wrapper" to={path}>
                     <img src={img_url} className="profilePic"/>
-                </figure>
+                </Link>
 
                 <div className="hero-info">
                     <div className="hero-description">
-                        {/* <h2>
-                            {alias}
-                        </h2>
-                        <h3>
-                            {name}
-                        </h3> */}
                         <h4>
                             Creator: {creator} - Universe: {universe}
                         </h4>

@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_064628) do
     t.integer "strength"
     t.integer "speed"
     t.integer "durability"
-    t.integer "power"
+    t.integer "energy_projection"
     t.integer "combat"
     t.bigint "superhero_id", null: false
     t.datetime "created_at", precision: 6, null: false

@@ -5,7 +5,7 @@ class CreatePowerstats < ActiveRecord::Migration[6.1]
       t.integer :strength
       t.integer :speed
       t.integer :durability
-      t.integer :power
+      t.integer :energy_projection
       t.integer :combat
       t.belongs_to :superhero, null: false, foreign_key: true
 

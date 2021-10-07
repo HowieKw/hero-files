@@ -1,17 +1,43 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import HeroRender from './HeroRender';
-// import NavBar from './Navbar';
+import NavBar from './Navbar';
+import HeroDetails from './HeroDetails';
 
-const HeroFile = () => {
+const HeroFile = ({ currentUser, setCurrentUser }) => {
+    const history = useHistory()
+  
+    const handleLogout = () => {
+        fetch(`/logout`, {
+        method: 'DELETE',
+        credentials: 'include'
+        })
+        .then(res => {
+            if (res.ok) {
+            setCurrentUser(null)
+            history.push('/')
+            }
+        })
+    }
     
+    const styles = {
+        color: "#48ff00",
+        fontSize: "20px",
+    }
 
     return(
         <div>
-            {/* <NavBar /> */}
-            <Switch>
-                <Route path="/Heroes" component={() => <HeroRender />} />
-            </Switch>
+            <header className="header">
+                <span style={styles}>Access Granted: {currentUser.username} <button onClick={handleLogout} className="butt">Logout</button></span>
+                <NavBar />
+            </header>
+
+            <nav>
+                <Switch>
+                    <Route path="/Heroes/:id" component={() => <HeroDetails />} />
+                    <Route path="/Heroes" component={() => <HeroRender />} />
+                </Switch>
+            </nav>
         </div>
     )
 }

@@ -5,13 +5,13 @@ const NavBar = () => {
     return(
         <div className="header">
             <nav>
-                <NavLink>
+                <NavLink className="button" exact to="/">
                     Profile
                 </NavLink>
-                <NavLink>
+                <NavLink className="button" exact to="/Heroes">
                     Heroes
                 </NavLink>
-                <NavLink>
+                <NavLink className="button" exact to="/Logout">
                     Logout
                 </NavLink>
             </nav>
