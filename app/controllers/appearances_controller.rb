@@ -1,2 +1,0 @@
-class AppearancesController < ApplicationController
-end
