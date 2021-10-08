@@ -4,10 +4,9 @@ import HeroInfo from './HeroInfo';
 
 const HeroDetails = ({ addFavHero }) => {
     const [details, setDetails] = useState(null);
-    const [appearance, setAppearance] = useState(null)
-    const [comment, setComment] = useState([]);
+    // const [comment, setComment] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [commentView, setCommentView] = useState(false);
+    // const [commentView, setCommentView] = useState(false);
 
     const id = useParams().id;
 
@@ -16,7 +15,7 @@ const HeroDetails = ({ addFavHero }) => {
         .then(resp => resp.json())
         .then(superheroes => {
             setDetails(superheroes);
-            setComment(superheroes.comments);
+            // setComment(superheroes.comments);
             setIsLoaded(true);
         });
     }, [id]);

@@ -57,6 +57,13 @@ header {
   margin-top: 0%;
 }
 
+.appTitle:hover {
+  color: springgreen;
+  box-shadow: 0 0 0 0 #48ff00;
+	transform: scale(5);
+	animation: pulse 2s infinite;
+}
+
 /* FORMS AND BUTTONS */
 .authForm {
   width: 50%;

@@ -5,7 +5,7 @@ class FavoriteHerosController < ApplicationController
     end
 
     def create
-        fav_hero = current_user.favorite_heros.new(fav_super_params)
+        fav_hero = current_user.favorite_heros.new(fav_hero_params)
         if fav_hero.save
             render json: fav_hero, status: :created
         else
@@ -21,7 +21,7 @@ class FavoriteHerosController < ApplicationController
 
     private
 
-    def fav_super_params
+    def fav_hero_params
         params.permit(:superhero_id)
     end
 

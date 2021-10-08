@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 
-const HeroCard = ({ hero, addFavHero }) => {
-    const { alias, name, creator, universe, like_count, img_url, id } = hero
+const FavHeroCard = ({ hero, fav, removeFavHero }) => {
+    const { alias, name, creator, universe, like_count, img_url } = hero
     
 
-    let path = `/Heroes/${id}`
+    // let path = `/${id}`
+    console.log(fav.id)
 
-    const handleAddFav = (e) => {
-        e.preventDefault()
-        addFavHero({
-            superhero_id: id
-        })
-    }
+    // const handleRemoveFav = (e) => {
+    //     e.preventDefault()
+    //     removeFavHero({
+    //         favId: fav.id
+    //     })
+    // }
 
     return(
         <div className="heroes-card">
@@ -27,7 +28,7 @@ const HeroCard = ({ hero, addFavHero }) => {
                     </div>
             </div>
 
-                <Link className="hero-wrapper" to={path}>
+                <Link className="hero-wrapper">
                     <img src={img_url} alt={alias} className="profilePic"/>
                 </Link>
 
@@ -40,7 +41,7 @@ const HeroCard = ({ hero, addFavHero }) => {
 
                         <div>            
                             <button className="card-button">💖 Likes: {like_count}</button>
-                            <button onClick={handleAddFav} className="card-button">⭐ Favorite</button>
+                            <button onClick={(e) => removeFavHero(fav.id, e)} className="card-button">💔 Unfavorite</button>
                         </div>
 
                     </div>
@@ -49,4 +50,4 @@ const HeroCard = ({ hero, addFavHero }) => {
     )
 } 
 
-export default HeroCard;
+export default FavHeroCard;

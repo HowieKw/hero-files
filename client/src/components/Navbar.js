@@ -1,19 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = ({ currentUser, handleLogout }) => {
 
-
+    let path = "/"
     return(
         <div>
             <nav>
-            <h1 className="appTitle">HERO FILES</h1>
+            <Link to={path}>
+                <h1 className="appTitle">HERO FILES</h1>
+            </Link>
                 <span className="username">Access Granted: {currentUser.username}</span>
                 <button onClick={handleLogout} className="fakeNavButt">Logout</button>
                 <NavLink className="navButt" exact to="/Heroes">
                     Heroes
                 </NavLink>
-                <NavLink className="navButt" exact to="/">
-                    Profile
+                <NavLink className="navButt" exact to="/Favorite_Heroes">
+                    Favorite Heroes
                 </NavLink>
             </nav>
         </div>
