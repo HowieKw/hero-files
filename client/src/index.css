@@ -82,6 +82,7 @@ header {
   background: rgba(0, 67, 129, 0.61);
   color: rgb(197, 197, 199);
   margin-top: 10rem;
+  border-radius: 20px;
 }
 
 .inputArea {
