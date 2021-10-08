@@ -4,7 +4,7 @@ import HeroCard from './HeroCard';
 const HeroRender = ({ addFavHero }) => {
     const [ heroes, setHeroes ] = useState([])
 
-    console.log(heroes)
+    // console.log(heroes)
 
     useEffect(() => {
         fetch("/superheros")

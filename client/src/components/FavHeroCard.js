@@ -1,18 +1,11 @@
 import { Link } from "react-router-dom";
 
 const FavHeroCard = ({ hero, fav, removeFavHero }) => {
-    const { alias, name, creator, universe, like_count, img_url } = hero
+    const { alias, name, creator, universe, like_count, img_url, id } = hero
     
 
-    // let path = `/${id}`
-    console.log(fav.id)
-
-    // const handleRemoveFav = (e) => {
-    //     e.preventDefault()
-    //     removeFavHero({
-    //         favId: fav.id
-    //     })
-    // }
+    let path = `/Heroes/${id}`
+    // console.log(fav.id)
 
     return(
         <div className="heroes-card">
@@ -28,7 +21,7 @@ const FavHeroCard = ({ hero, fav, removeFavHero }) => {
                     </div>
             </div>
 
-                <Link className="hero-wrapper">
+                <Link className="hero-wrapper" to={path}>
                     <img src={img_url} alt={alias} className="profilePic"/>
                 </Link>
 
@@ -41,7 +34,7 @@ const FavHeroCard = ({ hero, fav, removeFavHero }) => {
 
                         <div>            
                             <button className="card-button">💖 Likes: {like_count}</button>
-                            <button onClick={(e) => removeFavHero(fav.id, e)} className="card-button">💔 Unfavorite</button>
+                            <button onClick={(e) => removeFavHero(fav.id, e)} className="card-button">🖤 Unfavorite</button>
                         </div>
 
                     </div>

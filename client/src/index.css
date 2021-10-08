@@ -42,7 +42,7 @@ header {
 
 	70% {
 		transform: scale(1);
-		box-shadow: 0 0 0 10px #48ff0000;
+		box-shadow: 0 0 0 10px #00fff200;
 	}
 
 	100% {
@@ -62,6 +62,15 @@ header {
   box-shadow: 0 0 0 0 #48ff00;
 	transform: scale(5);
 	animation: pulse 2s infinite;
+}
+
+.welcome-vid {
+  width: 50%;
+  box-shadow: 0 0 0 0 #00b7ff;
+	transform: scale(1);
+	animation: pulse 5s infinite;
+  margin-top: 50px;
+  border-radius: 50px;
 }
 
 /* FORMS AND BUTTONS */

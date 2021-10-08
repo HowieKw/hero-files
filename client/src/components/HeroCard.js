@@ -7,7 +7,7 @@ const HeroCard = ({ hero, addFavHero }) => {
     let path = `/Heroes/${id}`
 
     const handleAddFav = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         addFavHero({
             superhero_id: id
         })

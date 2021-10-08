@@ -18,6 +18,8 @@ const FavoriteHeroes = ({ favHeroes, setFavHeroes }) => {
         })
     }
 
+    // console.log(favHeroes)
+
     const displayFavHeroes =
         favHeroes.map(favHero =>
         <FavHeroCard

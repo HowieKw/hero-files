@@ -4,6 +4,7 @@ import HeroRender from './HeroRender';
 import NavBar from './Navbar';
 import HeroDetails from './HeroDetails';
 import FavoriteHeroes from './FavoriteHeroes';
+import Home from './Home';
 import { __RouterContext } from 'react-router';
 
 
@@ -56,13 +57,12 @@ const HeroFile = ({ currentUser, setCurrentUser }) => {
             <header className="header">
                 <NavBar currentUser={currentUser} handleLogout={handleLogout}/>
             </header>
-
             <nav>
                 <Switch>
                     <Route path="/Heroes/:id" component={() => <HeroDetails addFavHero={addFavHero}/>} />
                     <Route path="/Heroes" component={() => <HeroRender addFavHero={addFavHero}/>} />
                     <Route path="/Favorite_Heroes" component={() => <FavoriteHeroes favHeroes={favHeroes} setFavHeroes={setFavHeroes}/>} />
-                    <Route path="/" />
+                    <Route path="/" component={Home}/>
                 </Switch>
             </nav>
         </div>
