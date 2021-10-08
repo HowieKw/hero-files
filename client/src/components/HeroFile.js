@@ -3,8 +3,10 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import HeroRender from './HeroRender';
 import NavBar from './Navbar';
 import HeroDetails from './HeroDetails';
+import HeroCard from './HeroCard';
 
 const HeroFile = ({ currentUser, setCurrentUser }) => {
+    const [ favHeroes, setFavHeroes ] = useState([])
     const history = useHistory()
   
     const handleLogout = () => {
@@ -19,23 +21,59 @@ const HeroFile = ({ currentUser, setCurrentUser }) => {
             }
         })
     }
+
+    useEffect(() => {
+        fetch("/favorite_heros")
+        .then(resp => resp.json())
+        .then(heroes => setFavHeroes(heroes))
+    }, []);
+
+    const displayFavHeroes =
+    favHeroes.map(favHero =>
+        <HeroCard
+        key={favHero.id}
+        hero={favHero.superhero}
+        />
+    )
     
-    const styles = {
-        color: "#48ff00",
-        fontSize: "20px",
-    }
+    console.log(favHeroes)
+
+    const addFavHero = (heroId) => {
+        return fetch("/favorite_heros", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          credentials: 'include',
+          body: JSON.stringify(heroId)
+        })
+          .then(res => {
+            if (res.ok) {
+              return res.json(), alert("Favorited")
+            } else {
+              return alert("Denied, this hero already favorited.")//res.json().then(errors => Promise.reject(errors))
+            }
+          })
+          .then(hero => {
+            setFavHeroes(favHeroes.concat(hero))
+          })
+      }
+
 
     return(
         <div>
             <header className="header">
-                <span style={styles}>Access Granted: {currentUser.username} <button onClick={handleLogout} className="butt">Logout</button></span>
-                <NavBar />
+                <NavBar currentUser={currentUser} handleLogout={handleLogout}/>
             </header>
+
+            <section>
+                {displayFavHeroes}
+            </section>
 
             <nav>
                 <Switch>
-                    <Route path="/Heroes/:id" component={() => <HeroDetails />} />
-                    <Route path="/Heroes" component={() => <HeroRender />} />
+                    <Route path="/Heroes/:id" component={() => <HeroDetails addFavHero={addFavHero}/>} />
+                    <Route path="/Heroes" component={() => <HeroRender addFavHero={addFavHero}/>} />
                 </Switch>
             </nav>
         </div>

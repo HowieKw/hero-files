@@ -4,7 +4,7 @@ const PowerstatBar = ({ bgcolor, title, powerstat }) => {
 
     const percentage = powerstat* 10
 
-    console.log(percentage)
+    // console.log(percentage)
 
     const containerStyles = {
         height: 20,

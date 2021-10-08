@@ -1,7 +1,7 @@
 import PowerstatBar from "./PowerstatBar"
 
-const HeroInfo = ({ details, appearance, background, powerstat }) => {
-    const { alias, name, creator, universe, powers, like_count } = details
+const HeroInfo = ({ details, appearance, background, powerstat, addFavHero }) => {
+    const { alias, name, creator, universe, powers, like_count, id } = details
     const { gender, species, eye_color, hair_color, height, weight, ani } = appearance
     const { aliases, place_of_birth, affiliations, former, relatives, history  } = background
     const { energy_projection, strength, intelligence, speed, durability, combat } = powerstat
@@ -14,18 +14,33 @@ const HeroInfo = ({ details, appearance, background, powerstat }) => {
         { bgcolor: "#F2AD27", completed: durability, title: "Durability" },
         { bgcolor: "#F2C60C", completed: combat, title: "Combat" },
       ];
+
     // console.log(power)
+
+    const styles = {
+        textDecoration: "underline",
+    }
+    
+    const handleAddFav = (e) => {
+        e.preventDefault()
+        addFavHero({
+            superhero_id: id
+        })
+    }
 
     return(
         <div className="hero-details">
             <h1 className="alias">{alias}</h1>
             
             <figure>
+                <button className="card-button">💖 Likes: {like_count}</button>
                 <video src={ani} autoPlay loop muted className="vid"/>
+                <button onClick={handleAddFav} className="card-button">⭐ Favorite</button>
             </figure>
 
-            <section className="identity">
-                
+            <section className="history">
+                <h2>History</h2>
+                <p>{history}</p>
             </section>
 
             <section className="sections">
@@ -36,9 +51,9 @@ const HeroInfo = ({ details, appearance, background, powerstat }) => {
                     <h5>Place of Birth: {place_of_birth}</h5>
                     
                     <div className="appearance">
-                        <h4>Powers & Abilities</h4>
+                        <h4 style={styles}>Powers & Abilities</h4>
                         <h5>{powers}</h5>
-                        <h4>Appearance</h4>
+                        <h4 style={styles}>Appearance</h4>
                         <h5>Species: {species}</h5>
                         <h5>Gender: {gender}</h5>
                         <h5>Hair color: {hair_color}</h5>
@@ -57,7 +72,7 @@ const HeroInfo = ({ details, appearance, background, powerstat }) => {
             </section>
 
             <div className="connections">
-                <h4>Connections</h4>
+                <h4 style={styles}>Connections</h4>
                 <h5>Aliases: {aliases}</h5>
                 <h5>Affiliations: {affiliations}</h5>
                 <h5>Former: {former}</h5>

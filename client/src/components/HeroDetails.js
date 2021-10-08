@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import HeroInfo from './HeroInfo';
 
-const HeroDetails = () => {
+const HeroDetails = ({ addFavHero }) => {
     const [details, setDetails] = useState(null);
     const [appearance, setAppearance] = useState(null)
     const [comment, setComment] = useState([]);
@@ -21,7 +21,7 @@ const HeroDetails = () => {
         });
     }, [id]);
 
-    console.log(details)
+    // console.log(details)
 
     if (!isLoaded) return <h2>Accessing File...</h2>;
 
@@ -33,6 +33,7 @@ const HeroDetails = () => {
             appearance={details.appearance} 
             background={details.background}
             powerstat={details.powerstat}
+            addFavHero={addFavHero}
             />
         </section>
     )

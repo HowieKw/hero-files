@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 
-const HeroCard = ({ hero, image }) => {
-    const { alias, name, creator, universe, like_count, id } = hero
-    const { img_url } = image
+const HeroCard = ({ hero, addFavHero }) => {
+    const { alias, name, creator, universe, like_count, img_url, id } = hero
+    
 
     let path = `/Heroes/${id}`
+
+    const handleAddFav = (e) => {
+        e.preventDefault()
+        addFavHero({
+            superhero_id: id
+        })
+    }
 
     return(
         <div className="heroes-card">
@@ -30,7 +37,12 @@ const HeroCard = ({ hero, image }) => {
                             Creator: {creator} - Universe: {universe}
                         </h4>
                         <hr></hr>
-                        <button className="like-button">💖 Likes: {like_count}</button>
+
+                        <div>            
+                            <button className="card-button">💖 Likes: {like_count}</button>
+                            <button onClick={handleAddFav} className="card-button">⭐ Favorite</button>
+                        </div>
+
                     </div>
                 </div>
         </div>

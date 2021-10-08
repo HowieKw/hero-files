@@ -7,6 +7,7 @@ class CreateSuperheros < ActiveRecord::Migration[6.1]
       t.string :universe
       t.text :powers
       t.integer :like_count, default: 0
+      t.string :img_url
 
       t.timestamps
     end

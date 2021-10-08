@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import HeroCard from './HeroCard';
 
-const HeroRender = () => {
+const HeroRender = ({ addFavHero }) => {
     const [ heroes, setHeroes ] = useState([])
 
     console.log(heroes)
@@ -17,7 +17,7 @@ const HeroRender = () => {
         <HeroCard
         key={hero.id}
         hero={hero}
-        image={hero.appearance}
+        addFavHero={addFavHero}
         />
     )
 

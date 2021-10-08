@@ -18,6 +18,45 @@ body {
   /* background-size: cover; */
 }
 
+
+/* HEADER/NAVBAR */
+header {
+  background-image: url("https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif");
+  padding: 40px;
+}
+
+.username {
+  color: #48ff00;
+  font-size: 20px;
+
+  box-shadow: 0 0 0 0 #48ff00;
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #48ff00c2;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px #48ff0000;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+.appTitle {
+  color: cyan;
+  float: left;
+  margin-top: 0%;
+}
+
 /* FORMS AND BUTTONS */
 .authForm {
   width: 50%;
@@ -68,12 +107,74 @@ textarea:focus, .inputArea:focus {
   transition: all 0.2s;
 }
 
-.butt:hover{
+
+.butt:hover {
   border-color: springgreen;
 }
 
 @media all and (max-width:30em){
   .butt {
+    display:block;
+    margin: 0.2em auto;
+  }
+}
+
+.navButt {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgb(32, 42, 102);
+  background-color: rgb(0, 146, 231);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(0, 255, 242);
+  text-shadow: 0 0.04em 0.04em slategray;
+  text-align: center;
+  transition: all 0.2s;
+
+  float: right;
+}
+
+.navButt:hover {
+  border-color: springgreen;
+}
+
+@media all and (max-width:30em){
+  .navButt {
+    display:block;
+    margin: 0.2em auto;
+  }
+}
+
+.fakeNavButt {
+  display: inline-block;
+  padding: 0.5em 2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgb(32, 42, 102);
+  background-color: rgb(0, 146, 231);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(0, 255, 242);
+  text-shadow: 0 0.04em 0.04em slategray;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 14px;
+
+  float: right;
+}
+
+.fakeNavButt:hover {
+  border-color: springgreen;
+}
+
+@media all and (max-width:30em){
+  .fakeNavButt {
     display:block;
     margin: 0.2em auto;
   }
@@ -113,7 +214,6 @@ textarea:focus, .inputArea:focus {
 .heroes-card:hover {
   transform: scale(1.1);
   box-shadow: 0px 0px 15px 0px;
-  color: ;
 }
 
 .hero-wrapper {
@@ -126,17 +226,38 @@ textarea:focus, .inputArea:focus {
   width: 50%;
 }
 
-.like-button {
-  display: flex;
-  justify-content: left;
-  margin-left: 1rem;
-  margin-bottom: .5rem;
+.card-button {
+  margin: 20px;
+  margin-top: 30px;
+
+  padding: 0.3em 1.2em;
+  border: 0.16em solid rgb(32, 42, 102);
+  background-color: rgb(0, 146, 231);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(140, 0, 255);
+  text-shadow: 0 0.04em 0.04em slategray;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: medium;
 }
 
-/* NAVBAR */
+.card-button:hover {
+  border-color: springgreen;
+}
 
+@media all and (max-width:30em){
+  .card-button {
+    display:block;
+    margin: 0.2em auto;
+  }
+}
 
 /* HERODETAIL/INFO */
+
 .hero-details {
   width: 90%;
   overflow: hidden;
@@ -144,6 +265,18 @@ textarea:focus, .inputArea:focus {
   margin: auto;
   background: rgba(0, 67, 129, 0.61);
   color: rgb(197, 197, 199);
+}
+
+.alias {
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 35%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+  margin-top: .5em;
 }
 
 .vid {
@@ -182,11 +315,25 @@ textarea:focus, .inputArea:focus {
   justify-content: center;
 }
 
+.history {
+  width: 95%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+}
+
+.connections {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+}
+
 /* POWERSTATS */
-/* .category {
-  display: flex;
-  justify-content: left;
-} */
 
 .stats {
   display: flex;

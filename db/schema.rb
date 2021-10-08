@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2021_10_04_064628) do
     t.string "weight"
     t.string "eye_color"
     t.string "hair_color"
-    t.string "img_url"
     t.string "ani"
     t.bigint "superhero_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -92,6 +91,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_064628) do
     t.string "universe"
     t.text "powers"
     t.integer "like_count", default: 0
+    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
