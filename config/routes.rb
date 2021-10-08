@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   
   resources :backgrounds
-  # resources :appearances
-  # resources :powerstats
-  resources :favorite_heros
+  resources :favorite_heros, only: [:index, :create, :destroy]
   resources :likes, only: [:create]
   resources :comments
   resources :superheros

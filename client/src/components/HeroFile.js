@@ -5,12 +5,13 @@ import NavBar from './Navbar';
 import HeroDetails from './HeroDetails';
 import FavoriteHeroes from './FavoriteHeroes';
 import Home from './Home';
-import { __RouterContext } from 'react-router';
+// import { __RouterContext } from 'react-router';
 
 
 const HeroFile = ({ currentUser, setCurrentUser }) => {
     const [ favHeroes, setFavHeroes ] = useState([])
     const history = useHistory()
+
   
     const handleLogout = () => {
         fetch(`/logout`, {
@@ -38,20 +39,36 @@ const HeroFile = ({ currentUser, setCurrentUser }) => {
           "Content-Type": "application/json"
         },
         credentials: 'include',
-        body: JSON.stringify(heroId)
+        body: JSON.stringify({
+          superhero_id: heroId
+        })
       })
         .then(res => {
           if (res.ok) {
             return res.json(), alert("Favorited")
           } else {
-            return alert("Denied, this hero already favorited.")//res.json().then(errors => Promise.reject(errors))
+            return res.json().then(errors => Promise.reject(errors)), alert("Denied, this hero already favorited.")
           }
         })
         .then(hero => {
-          setFavHeroes(favHeroes.concat(hero))
+          const updatedFavHeroes = favHeroes.map((favHero) => {
+            console.log(hero)
+            console.log(favHero)
+            console.log(favHero.id)
+            if (favHero.superhero.id === heroId) {
+              return {
+                ...favHero,
+                favorite_hero: hero
+              }
+            } else {
+              return favHero
+            }
+          })
+         setFavHeroes(updatedFavHeroes)
         })
     }
 
+    // setFavHeroes(favHeroes.concat(hero))
     return(
         <div>
             <header className="header">
@@ -62,7 +79,7 @@ const HeroFile = ({ currentUser, setCurrentUser }) => {
                     <Route path="/Heroes/:id" component={() => <HeroDetails addFavHero={addFavHero}/>} />
                     <Route path="/Heroes" component={() => <HeroRender addFavHero={addFavHero}/>} />
                     <Route path="/Favorite_Heroes" component={() => <FavoriteHeroes favHeroes={favHeroes} setFavHeroes={setFavHeroes}/>} />
-                    <Route path="/" component={Home}/>
+                    <Route path="/" component={() => <Home currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
                 </Switch>
             </nav>
         </div>

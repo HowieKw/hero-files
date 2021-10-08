@@ -23,10 +23,24 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        userUpdate = User.find_by(id: params[:id])
+        if userUpdate
+            userUpdate.update(user_params)
+            render json: userUpdate, status: :accepted
+        else 
+            render json: {error: userUpdate.errors.full_messages}, status: :not_found
+        end
+    end
+
     private
 
     def user_params
         params.permit(:username, :password, :password_confirmation)
+    end
+
+    def update_user_params
+        params.permit(:username)
     end
 
     def authorize

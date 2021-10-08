@@ -8,9 +8,7 @@ const HeroCard = ({ hero, addFavHero }) => {
 
     const handleAddFav = (e) => {
         e.preventDefault();
-        addFavHero({
-            superhero_id: id
-        })
+        addFavHero(id)
     }
 
     return(
