@@ -6,9 +6,12 @@ class FavoriteHerosController < ApplicationController
 
     def create
         fav_hero = current_user.favorite_heros.new(fav_hero_params)
+        # byebug
         if fav_hero.save
+            # byebug
             render json: fav_hero, status: :created
         else
+            # byebug
             render json: fav_hero.errors, status: :unprocessable_entity
         end
     end
@@ -22,6 +25,7 @@ class FavoriteHerosController < ApplicationController
     private
 
     def fav_hero_params
+        # byebug
         params.permit(:superhero_id)
     end
 

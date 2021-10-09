@@ -27,8 +27,8 @@ function Signup({ setCurrentUser }) {
             history.push('/groups')
           })
         } else {
-          setCurrentUser({ username: "Dakota" })
-          history.push('/groups')
+          alert("Username already taken")
+          history.push('/signup')
           res.json().then(errors => {
             console.error(errors)
           })

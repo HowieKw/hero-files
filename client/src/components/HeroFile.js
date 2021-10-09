@@ -51,6 +51,7 @@ const HeroFile = ({ currentUser, setCurrentUser }) => {
           }
         })
         .then(hero => {
+          // debugger
           const updatedFavHeroes = favHeroes.map((favHero) => {
             console.log(hero)
             console.log(favHero)

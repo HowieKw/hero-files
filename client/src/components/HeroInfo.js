@@ -23,9 +23,7 @@ const HeroInfo = ({ details, appearance, background, powerstat, addFavHero }) =>
     
     const handleAddFav = (e) => {
         e.preventDefault()
-        addFavHero({
-            superhero_id: id
-        })
+        addFavHero(id)
     }
 
     return(
