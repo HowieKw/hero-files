@@ -1,3 +1,4 @@
+/* GENERAL CSS */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +12,347 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-image: url("https://res.cloudinary.com/djzhu5kfj/image/upload/v1633583604/Flatiron%20-%20Phase%204%20Project/Background_rtcyih.jpg");
+  /* background-size: cover; */
+}
+
+
+/* HEADER/NAVBAR */
+header {
+  background-image: url("https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif");
+  padding: 40px;
+}
+
+.username {
+  color: #48ff00;
+  font-size: 20px;
+
+  box-shadow: 0 0 0 0 #48ff00;
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #48ff00c2;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px #00fff200;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+.appTitle {
+  color: cyan;
+  float: left;
+  margin-top: 0%;
+}
+
+.appTitle:hover {
+  color: springgreen;
+  box-shadow: 0 0 0 0 #48ff00;
+	transform: scale(5);
+	animation: pulse 2s infinite;
+}
+
+.welcome-vid {
+  width: 50%;
+  box-shadow: 0 0 0 0 #00b7ff;
+	transform: scale(1);
+	animation: pulse 5s infinite;
+  margin-top: 50px;
+  border-radius: 50px;
+}
+
+/* FORMS AND BUTTONS */
+.authForm {
+  width: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+  margin-top: 10rem;
+  border-radius: 20px;
+}
+
+.inputArea {
+  background-color: rgba(0, 67, 129, 0.61);
+  padding: 5px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: rgb(136, 154, 168);
+}
+
+.inputArea:focus {
+  border-color: springgreen;
+}
+
+.inputArea, select, textarea {
+  color: rgb(43, 226, 104);
+}
+
+textarea:focus, .inputArea:focus {
+  color: blueviolet;
+}
+
+.butt {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgb(32, 42, 102);
+  background-color: rgb(0, 146, 231);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(0, 255, 242);
+  text-shadow: 0 0.04em 0.04em slategray;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+
+.butt:hover {
+  border-color: springgreen;
+}
+
+@media all and (max-width:30em){
+  .butt {
+    display:block;
+    margin: 0.2em auto;
+  }
+}
+
+.navButt {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgb(32, 42, 102);
+  background-color: rgb(0, 146, 231);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(0, 255, 242);
+  text-shadow: 0 0.04em 0.04em slategray;
+  text-align: center;
+  transition: all 0.2s;
+
+  float: right;
+}
+
+.navButt:hover {
+  border-color: springgreen;
+}
+
+@media all and (max-width:30em){
+  .navButt {
+    display:block;
+    margin: 0.2em auto;
+  }
+}
+
+.fakeNavButt {
+  display: inline-block;
+  padding: 0.5em 2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgb(32, 42, 102);
+  background-color: rgb(0, 146, 231);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(0, 255, 242);
+  text-shadow: 0 0.04em 0.04em slategray;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 14px;
+
+  float: right;
+}
+
+.fakeNavButt:hover {
+  border-color: springgreen;
+}
+
+@media all and (max-width:30em){
+  .fakeNavButt {
+    display:block;
+    margin: 0.2em auto;
+  }
+}
+
+#authButton {
+  background-image: url("https://c8.alamy.com/comp/2F2FNC0/fingerprint-biometric-scanner-against-microprocessor-connections-on-blue-background-2F2FNC0.jpg");
+  background-size: cover;
+  padding: 1em 1em;
+  color: rgb(0, 255, 221);
+  font-size: 110%;
+}
+
+/* HERO CARDS */
+.heroes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.heroes-card {
+  width: 500px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  transition: 0.3s;
+  animation: ease-in;
+  background: rgba(10, 52, 167, 0.521);
+  color: rgb(186, 187, 190);
+  border-radius: 25px;
+}
+
+.heroes-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px 0px;
+}
+
+.hero-wrapper {
+  overflow: hidden;
+}
+
+
+.profilePic {
+  height: 50%;
+  width: 50%;
+}
+
+.card-button {
+  margin: 20px;
+  margin-top: 30px;
+
+  padding: 0.3em 1.2em;
+  border: 0.16em solid rgb(32, 42, 102);
+  background-color: rgb(0, 146, 231);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(140, 0, 255);
+  text-shadow: 0 0.04em 0.04em slategray;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: medium;
+}
+
+.card-button:hover {
+  border-color: springgreen;
+}
+
+@media all and (max-width:30em){
+  .card-button {
+    display:block;
+    margin: 0.2em auto;
+  }
+}
+
+/* HERODETAIL/INFO */
+
+.hero-details {
+  width: 90%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+}
+
+.alias {
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 35%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+  margin-top: .5em;
+}
+
+.vid {
+  width: 40%;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+}
+
+#pa-section {
+  width: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+
+  display: inline-block;
+  vertical-align: text-top;
+  margin: 0 auto;
+}
+
+#ps-section {
+  width: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+}
+
+#powerstat {
+  display: flex;
+  justify-content: center;
+}
+
+.history {
+  width: 95%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+}
+
+.connections {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  margin: auto;
+  background: rgba(0, 67, 129, 0.61);
+  color: rgb(197, 197, 199);
+}
+
+/* POWERSTATS */
+
+.stats {
+  display: flex;
+  justify-content: center;
+} 
