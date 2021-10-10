@@ -39,37 +39,22 @@ const HeroFile = ({ currentUser, setCurrentUser }) => {
           "Content-Type": "application/json"
         },
         credentials: 'include',
-        body: JSON.stringify({
-          superhero_id: heroId
-        })
+        body: JSON.stringify(heroId)
       })
         .then(res => {
           if (res.ok) {
-            return res.json(), alert("Favorited")
+            alert("Favorited!")
+            return res.json()
           } else {
-            return res.json().then(errors => Promise.reject(errors)), alert("Denied, this hero already favorited.")
+            alert("Hero has already been favorited!")
+            return res.json().then(errors => Promise.reject(errors))
           }
         })
         .then(hero => {
-          // debugger
-          const updatedFavHeroes = favHeroes.map((favHero) => {
-            console.log(hero)
-            console.log(favHero)
-            console.log(favHero.id)
-            if (favHero.superhero.id === heroId) {
-              return {
-                ...favHero,
-                favorite_hero: hero
-              }
-            } else {
-              return favHero
-            }
-          })
-         setFavHeroes(updatedFavHeroes)
+          setFavHeroes(favHeroes.concat(hero))
         })
     }
-
-    // setFavHeroes(favHeroes.concat(hero))
+    
     return(
         <div>
             <header className="header">

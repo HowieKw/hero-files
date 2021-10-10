@@ -8,8 +8,10 @@ const HeroCard = ({ hero, addFavHero }) => {
 
     const handleAddFav = (e) => {
         e.preventDefault();
-        addFavHero(id)
-    }
+        addFavHero({
+            superhero_id: id
+        });
+    };
 
     return(
         <div className="heroes-card">
