@@ -6,12 +6,6 @@ This project was prepared in mind to practice and hone in all the lessons and pr
 
 This is a JavaScript application made with React with backend Ruby Rails. 
 
-## How to Install Hero Files Application.
-1. Use your terminal to navigate into the place where you want to clone Hero Files's directory and `git clone` the url.
-2. In terminal run `npm install --prefix client` in order to install the necessary packages found in the `package.json` file needed to run this frontend. Also `bundle install` in order to install the necessary gems needed to run the backend.
-3. Make sure you run `rails s` for the backend server and then run `npm start --prefix client` to start the front end.
-4. This should open up your browser to Hero Files's login page!
-
 ## Developer
 * Howard Kwon
 
