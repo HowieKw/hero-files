@@ -12,6 +12,5 @@ This is a JavaScript application made with React with backend Ruby Rails.
 ## More About Our App
 Hero Files uses packages such as React and React-Router-Dom
 
-You can find the live version at: 
 ### License
 This project is licensed under the Learn.co Educational Content License. Please read `LICENSE.md` location in the directory or click on the following link (http://learn.co/content-license) for further details.
